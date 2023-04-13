@@ -1,0 +1,419 @@
+<section id="about" class="about">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>NOTIFICACIÓN DE EVENTOS ADVERSOS</h2>
+
+      <p>“La seguridad del paciente no es un destino, es un viaje” (L. Leape).</p> <br>
+
+
+      <h5>POR FAVOR SEÑALE LA FECHA EN LA QUE SUCEDIO EL EVENTO </h5><br>
+
+      <form method="post" target="_blank">
+
+        <p><input type="date" name="fechaesperada">
+
+        </p> <br>
+      </form>
+
+      <h5>Momento de la atención en al que se suscita el evento </h5><br>
+
+      <!-- momentoEvento -->
+      <label for="momentoEvento">Selecciona el momento del evento</label>
+      <select class="form-control"
+              name="momentoEvento"
+              [class.is-invalid]="momentoEvento.invalid && momentoEvento.touched"
+              [(ngModel)]="model.momentoEvento"
+              required
+              #momentoEvento="ngModel">
+        <option value="1.-Ingreso a sala.">1.-Ingreso a sala.</option>
+        <option value="2.-Trans hemodiálisis.">2.-Trans hemodiálisis.</option>
+        <option value="3.-Pos hemodiálisis.">3.-Pos hemodiálisis.</option>
+        <option value="4.-En la consulta.">4.-En la consulta.</option>
+      </select>
+      <br>
+
+      <!-- definicionOperativa -->
+      <h5>DEFINICIÓN OPERATIVA ADVERSO</h5><br>
+
+      <label for="definicionOperativa">Selecciona la definición operativa</label>
+      <select class="form-control"
+              name="definicionOperativa"
+              [class.is-invalid]="definicionOperativa.invalid && definicionOperativa.touched"
+              [(ngModel)]="model.definicionOperativa"
+              required
+              #definicionOperativa="ngModel">
+        <option value="1.-Coagulación de circuito extracorpóreo.">
+          1.-Coagulación de circuito extracorpóreo.
+        </option>
+        <option value="2.-Extravasación de FAVI.">
+          2.-Extravasación de FAVI.
+        </option>
+        <option value="3.-Embolia gaseosa provocada por no pinzar lumen de catéter o del circuito extracorpóreo.">
+          3.-Embolia gaseosa provocada por no pinzar lumen de catéter o del circuito extracorpóreo.
+        </option>
+        <option value="4.-Paciente al cual se le administra un medicamento por error y es necesario activar código azul sin que se de RCP.">
+          4.-Paciente al cual se le administra un medicamento por error y es necesario activar código azul sin que se de RCP.
+        </option>
+        <option value="5.-Calambres por prescripción inadecuada de diálisis.">
+          5.-Calambres por prescripción inadecuada de diálisis.
+        </option>
+        <option value="6.-Hipotensión por UF inadecuada.">
+          6.-Hipotensión por UF inadecuada.
+        </option>
+        <option value="7.-Caída del paciente en cualquier momento del proceso de atención.">
+          7.-Caída del paciente en cualquier momento del proceso de atención.
+        </option>
+        <option value="8.-Ministrar medicamento al cual el paciente es alérgico.">
+          8.-Ministrar medicamento al cual el paciente es alérgico.
+        </option>
+        <option value="9.-Perdida de sangre por mala hemostasia.">
+          9.-Perdida de sangre por mala hemostasia.
+        </option>
+        <option value="10.-Perdida de sangre por no verificar los clamps del circuito extracorpóreo.">
+          10.-Perdida de sangre por no verificar los clamps del circuito extracorpóreo.
+        </option>
+        <option value="11.-Mal pesaje del paciente que provoca una complicación.">
+          11.-Mal pesaje del paciente que provoca una complicación.
+        </option>
+        <option value="12.-Salida de catéter por mala fijación durante la sesión de HD.">
+          12.-Salida de catéter por mala fijación durante la sesión de HD.
+        </option>
+        <option value="13.-Invertir líneas en FAV que provocan una recirculación.">
+          13.-Invertir líneas en FAV que provocan una recirculación.
+        </option>
+        <option value="14.-Ingresar paciente sin adecuada valoración médica y este se complica.">
+          14.-Ingresar paciente sin adecuada valoración médica y este se complica.
+        </option>
+        <option value="15.-Pinchadura o salpicadura de sangre al personal de salud">
+          15.-Pinchadura o salpicadura de sangre al personal de salud
+        </option>
+        <option value="16.-Riesgo de infección relacionada al no apego a protocolo COVID-19">
+          16.-Riesgo de infección relacionada al no apego a protocolo COVID-19
+        <option value="17.-Infección cruzada que llega al paciente, sin que esté mutile su vida o función.">
+          17.-Infección cruzada que llega al paciente, sin que esté mutile su vida o función.
+        </option>
+        <option value="18.-Infección cruzada que llega al personal, sin que este mutile su vida o función.">
+          18.-Infección cruzada que llega al personal, sin que este mutile su vida o función.
+        </option>
+        <option value="19.-Multipunción de FAVI">
+          19.-Multipunción de FAVI
+        </option>
+        <option value="20.-Ruptura de catéter por mala practica o manejo.">
+          20.-Ruptura de catéter por mala practica o manejo.
+        </option>
+        <option value="21.-Contaminación de hemocultivo por manejo erroneo en la toma.">
+          21.-Contaminación de hemocultivo por manejo erroneo en la toma.
+        </option>
+        <option value="22.-Daño a paciente por agresión física en la unidad.">
+          22.-Daño a paciente por agresión física en la unidad.
+        </option>
+      </select>
+      <br>
+
+      <!-- descripcionInsidente -->
+      <h6>DESCRIPCIÓN DEL INCIDENTE </h6>
+
+      <div class="input-group">
+        <textarea [(ngModel)]="model.descripcionInsidente" class="form-control"></textarea>
+      </div>
+      <br>
+
+      <!-- situacion -->
+      <h6>A conciencia por favor responda a los siguientes criterios </h6>
+      <p>Por favor señale que situación usted considera que origino el evento</p> <br>
+
+      <label for="situacion">Selecciona la situación</label>
+      <select class="form-control"
+              name="situacion"
+              [class.is-invalid]="situacion.invalid && situacion.touched"
+              [(ngModel)]="model.situacion"
+              required
+              #situacion="ngModel">
+        <option value="1.-Condición clínica del Paciente.">
+          1.-Condición clínica del Paciente.
+        </option>
+        <option value="2.-Falta de proceso y protocolos de atención.">
+          2.-Falta de proceso y protocolos de atención.
+        </option>
+        <option value="3.-Falta de conocimiento o experiencia del colaborador.">
+          3.-Falta de conocimiento o experiencia del colaborador.
+        </option>
+        <option value="4.-Mala comunicación entre los miembros del equipo asistencial.">
+          4.-Mala comunicación entre los miembros del equipo asistencial.
+        </option>
+        <option value="5.-Carga de trabajo inusualmente alta o personal insuficiente.">
+          5.-Carga de trabajo inusualmente alta o personal insuficiente.
+        </option>
+        <option value="6.-Falta de recursos e insumos y su limitaciones de uso.">
+          6.-Falta de recursos e insumos y su limitaciones de uso.
+        </option>
+        <option value="7.-Falta de mantenimientos preventivos y correctivos.">
+          7.-Falta de mantenimientos preventivos y correctivos.
+        </option>
+      </select>
+      <br>
+
+      <!-- consecuencias -->
+      <h6>¿Usted considera que el evento produjo consecuencias en el paciente o personal? </h6> <br>
+
+      <div class="form-check">
+        <input class="form-check-input"
+              type="radio"
+              name="consecuencias"
+              value="Si"
+              [class.is-invalid]="consecuencias.invalid && consecuencias.touched"
+              required
+              [(ngModel)]="model.consecuencias"
+              #consecuencias="ngModel">
+
+        <p>Si</p>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input"
+              type="radio"
+              name="consecuencias"
+              value="No"
+              [class.is-invalid]="consecuencias.invalid && consecuencias.touched"
+              required
+              [(ngModel)]="model.consecuencias"
+              #consecuencias="ngModel">
+
+        <p>No</p>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input"
+              type="radio"
+              name="consecuencias"
+              value="Tal vez"
+              [class.is-invalid]="consecuencias.invalid && consecuencias.touched"
+              required
+              [(ngModel)]="model.consecuencias"
+              #consecuencias="ngModel">
+
+        <p>Tal vez</p>
+      </div>
+      <br>
+
+      <!-- severidad -->
+      <h6>La severidad de las consecuencias en el paciente o personal son; </h6> <br>
+
+      <div class="form-check">
+        <input class="form-check-input"
+              type="radio"
+              name="severidad"
+              value="Rápida solución"
+              [class.is-invalid]="severidad.invalid && severidad.touched"
+              required
+              [(ngModel)]="model.severidad"
+              #severidad="ngModel">
+
+        <p>Rápida solución</p>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input"
+              type="radio"
+              name="severidad"
+              value="Requiere tratamiento Adicional"
+              [class.is-invalid]="severidad.invalid && severidad.touched"
+              required
+              [(ngModel)]="model.severidad"
+              #severidad="ngModel">
+
+        <p>Requiere tratamiento Adicional</p>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input"
+              type="radio"
+              name="severidad"
+              value="Requiere TX de alta complejidad"
+              [class.is-invalid]="severidad.invalid && severidad.touched"
+              required
+              [(ngModel)]="model.severidad"
+              #severidad="ngModel">
+
+        <p>Requiere TX de alta complejidad</p>
+      </div>
+      
+      <div class="form-check">
+        <input class="form-check-input"
+              type="radio"
+              name="severidad"
+              value="Ninguna"
+              [class.is-invalid]="severidad.invalid && severidad.touched"
+              required
+              [(ngModel)]="model.severidad"
+              #severidad="ngModel">
+
+        <p>Ninguna</p>
+      </div>
+      <br>
+
+      <!-- quienReporta -->
+      <h6>¿Quién Reporta? </h6> <br>
+
+      <label for="quienReporta">Selecciona la situación</label>
+      <select class="form-control"
+              name="quienReporta"
+              [class.is-invalid]="quienReporta.invalid && quienReporta.touched"
+              [(ngModel)]="model.quienReporta"
+              required
+              #quienReporta="ngModel">
+        <option value="1.-Enfermería.">
+          1.-Enfermería.
+        </option>
+        <option value="2.-Médico.">
+          2.-Médico.
+        </option>
+        <option value="3.-Recepcion.">
+          3.-Recepcion.
+        </option>
+        <option value="4.-Administrativos.">
+          4.-Administrativos.
+        </option>
+        <option value="5.-Otro.">
+          5.-Otro.
+        </option>
+      </select>
+      <br>
+
+      <!-- turno -->
+      <h6>Turno en el que se suscitó el evento</h6> <br>
+
+      <div class="form-check">
+        <input class="form-check-input"
+              type="radio"
+              name="turno"
+              value="Matutino"
+              [class.is-invalid]="turno.invalid && turno.touched"
+              required
+              [(ngModel)]="model.turno"
+              #turno="ngModel">
+
+        <p>Matutino</p>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input"
+              type="radio"
+              name="turno"
+              value="Vespertino"
+              [class.is-invalid]="turno.invalid && turno.touched"
+              required
+              [(ngModel)]="model.turno"
+              #turno="ngModel">
+
+        <p>Vespertino</p>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input"
+              type="radio"
+              name="turno"
+              value="Otro"
+              [class.is-invalid]="turno.invalid && turno.touched"
+              required
+              [(ngModel)]="model.turno"
+              #turno="ngModel">
+
+        <p>Otro</p>
+      </div>
+      <br>
+
+      <!-- personalInvolucrado -->
+      <h6>Personal involucrado</h6> <br>
+
+      <select class="form-control"
+              name="personalInvolucrado"
+              [class.is-invalid]="personalInvolucrado.invalid && personalInvolucrado.touched"
+              [(ngModel)]="model.personalInvolucrado"
+              required
+              #personalInvolucrado="ngModel">
+        <option value="1.-Médico.">
+          1.-Médico.
+        </option>
+        <option value="2.-Enfermeía.">
+          2.-Enfermeía.
+        </option>
+        <option value="3.-Recepcion.">
+          3.-Recepcion.
+        </option>
+        <option value="4.-Administrativos.">
+          4.-Administrativos.
+        </option>
+        <option value="5.-Intendencia.">
+          5.-Intendencia.
+        </option>
+        <option value="6.-Mantenimiento.">
+          6.-Mantenimiento.
+        </option>
+        <option value="7.-Otro.">
+          7.-Otro.
+        </option>
+      </select>
+      <br>
+
+      <!-- barrerasProcesos -->
+      <h6>BARRERAS Y PROCESOS</h6>
+      <p> Existe un proceso o barrera diseñada </p> <br>
+
+      <div class="form-check">
+        <input class="form-check-input"
+              type="radio"
+              name="barrerasProcesos"
+              value="Si"
+              [class.is-invalid]="barrerasProcesos.invalid && barrerasProcesos.touched"
+              required
+              [(ngModel)]="model.barrerasProcesos"
+              #turno="ngModel">
+
+        <p>Si</p>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input"
+              type="radio"
+              name="barrerasProcesos"
+              value="No"
+              [class.is-invalid]="barrerasProcesos.invalid && barrerasProcesos.touched"
+              required
+              [(ngModel)]="model.barrerasProcesos"
+              #barrerasProcesos="ngModel">
+
+        <p>No</p>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input"
+              type="radio"
+              name="barrerasProcesos"
+              value="Tal vez"
+              [class.is-invalid]="barrerasProcesos.invalid && barrerasProcesos.touched"
+              required
+              [(ngModel)]="model.barrerasProcesos"
+              #barrerasProcesos="ngModel">
+
+        <p>Tal vez</p>
+      </div>
+      <br>
+
+      <h6>EXISTENCIA DE SEGUNDAS VICTIMAS</h6>
+      <p> Estimado colaborador, en caso de afrontar sentimientos de culpa, estrés, pérdida de confianza en
+        sus decisiones profesionales por ser la segunda víctima de un evento adverso o centinela. Por favor elija la
+        opción que aplique, de lo contrario seleccione Enviar </p> <br>
+
+      <a href="segundavictima2.html" class="logo"><img src="assets/img/bt1.png" alt="" class="img-fluid"></a>
+      <a href="segundavictima2.html" class="logo"><img src="assets/img/bt2.png" alt="" class="img-fluid"></a>
+      <br><br>
+
+      <h6 aling="left">En caso de que no aplique dar click en enviar.</h6>
+
+      <button class="btn btn-primary mb-3" (click)="enviar()">Enviar</button>
+    </div>
+
+  </div>
+</section>
